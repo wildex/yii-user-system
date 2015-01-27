@@ -1,13 +1,14 @@
 Flexperto - Frontend Application Test
 =====================================
 
-### The Task
+THE TASK
+--------------
 
 Your task is to build an User-CRUD. You will find an allready prepared User model in the common tier,
 including an authentication life-cycle (sign-up/sign-in/password-reset). What we expect:
-- add an Avatar to Users
-- add a mobile number to Users
-- build a profile for registered Users (including regular show, editing and canceling the account)
+* add an Avatar to Users
+* add a mobile number to Users
+* build a profile for registered Users (including regular show, editing and canceling the account)
 
 You should focus on the views. If you feel the need of model-side or controller-side code, feel free to write it.
 But your main objective should be to get your HTML to the Browser :-) You can use whatever IDE / component / technology 
@@ -38,10 +39,7 @@ state specific things you focused on:
 
 This solution took me ____ hours.
 I added/skipped the follwing micro-tasks (because of ... ):
-__________________
-__________________
-__________________
-
+...
 
 ### How to proceed
 
