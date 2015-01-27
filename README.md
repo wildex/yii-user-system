@@ -55,8 +55,11 @@ I added/skipped the follwing micro-tasks (because of ... ):
 ### How to proceed
 
 Check our the code using git. Start. When you are finished, pass on the code to Caspar Bauer:
+
 mail:c.bauer@flexperto.com
+
 skype:designtesbrot
+
 
 Choose the format of submission of your choice :-) ( Mail / Dropbox / FTP / GitHub )
 
@@ -64,8 +67,11 @@ Choose the format of submission of your choice :-) ( Mail / Dropbox / FTP / GitH
 ### Questions ?
 
 Feel free to contact Caspar Bauer - User Lead:
+
 mail:c.bauer@flexperto.com
+
 skype:designtesbrot
+
 available at any time
 
 
