@@ -4,8 +4,7 @@ Flexperto - Frontend Application Test
 THE TASK
 --------------
 
-Your task is to build an User-CRUD. You will find an allready prepared User model in the common tier,
-including an authentication life-cycle (sign-up/sign-in/password-reset). What we expect:
+Your task is to build an User-CRUD. You will find an allready prepared User model in the common tier, including an authentication life-cycle (sign-up/sign-in/password-reset). What we expect:
 
 
 1.  add an Avatar to Users
@@ -13,34 +12,23 @@ including an authentication life-cycle (sign-up/sign-in/password-reset). What we
 3.  build a profile for registered Users (including regular show, editing and canceling the account)
 
 
-You should focus on the views. If you feel the need of model-side or controller-side code, feel free to write it.
-But your main objective should be to get your HTML to the Browser :-) You can use whatever IDE / component / technology 
-you would like to, as long as this application stays the HTML-generating, server-side component. Keep in mind
-that your code will have to run in our Apaches. An addition to this file for special setup instructions,
-such for example bower and stuff, would be wise if needed :-)
+You can use whatever IDE / component / technology  you would like to, as long as this application stays the HTML-generating, server-side component. Keep in mind that your code will have to run in our Apaches. An addition to this file for special setup instructions, such for example bower and stuff, would be wise if needed :-)
 
 
 ### The Hook
 
 
-We realy want you to show us your strengths. We tried, but we could not come up with a strict task
-that both seemed fair but also challenging for your unique mindsets. Thats why we decided to design
-this task in a very open ended manner.
+We realy want you to show us your strengths. We tried, but we could not come up with a strict task that both seemed fair but also challenging for your unique mindsets. Thats why we decided to design this task in a very open ended manner.
 
-
-This means that we guive you a guideline for 5 hours to solve the general task. How much time to actualy spend
-is totaly up to you. It can be less, twice or even ten times 5 hours. But keep in mind that we will !not grant you a bonus!
+This means that we guive you a guideline for 10 hours to solve the general task. How much time to actualy spend
+is totaly up to you. It can be less, twice or even ten times 10 hours. But keep in mind that we will **not grant you a bonus**
 based on the hours you did spend.
 
 
 ### What to do with the time
 
 
-Well first of all you should try to deliver the key task. But if you feel that one or several items of the
-key task are for example generaly outdated and bad practice, you can note this at the end of this section of the README,
-just skip it and get the task done in less than 5 hours. If you feel that there should be more to it, or you want to show
-us some niffty skills, or js libraries, or whatever - feel free to raise your time budget. You get the idea, right?
-Get the task done - in a way that you feel comfortable with.
+Well first of all you should try to deliver the key task. You are free to set your focus on model || controllers || views if you feel to. If you think that one or several items of the general task are for example generaly outdated and bad practice, you can note this at the end of this section of the README, just skip it and get the task done in less than 10 hours. If you feel that there should be more to it, or you want to show us some niffty skills, or js libraries, or whatever - feel free to raise your time budget. You get the idea, right? Get the task done - in a way that you feel comfortable with.
 
 
 When you are finished, please honestly state how much time you did spend. If you feel the need, you can also
