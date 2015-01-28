@@ -54,7 +54,7 @@ I added/skipped the follwing micro-tasks (because of ... ):
 
 ### How to proceed
 
-Check our the code using git. Start. When you are finished, pass on the code to Caspar Bauer:
+Check out the code using git. Start. When you are finished, pass on the code to Caspar Bauer:
 
 mail:c.bauer@flexperto.com
 
