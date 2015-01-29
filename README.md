@@ -1,4 +1,4 @@
-Flexperto - Frontend Application Test
+Flexperto - Final Application Test
 =====================================
 
 THE TASK
