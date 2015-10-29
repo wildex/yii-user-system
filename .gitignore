@@ -1,0 +1,8 @@
+# ide
+.idea
+# project core
+# composer
+vendor
+composer.lock
+# framework
+yii
