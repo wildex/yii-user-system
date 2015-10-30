@@ -27,6 +27,11 @@ class User extends ActiveRecord implements IdentityInterface
     const STATUS_ACTIVE = 10;
 
     /**
+     * @var \yii\web\UploadedFile
+     */
+    public $avatar;
+
+    /**
      * @inheritdoc
      */
     public static function tableName()
@@ -52,6 +57,7 @@ class User extends ActiveRecord implements IdentityInterface
         return [
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
+            ['avatar', 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
         ];
     }
 
@@ -184,5 +190,18 @@ class User extends ActiveRecord implements IdentityInterface
     public function removePasswordResetToken()
     {
         $this->password_reset_token = null;
+    }
+
+    /**
+     * @return bool
+     */
+    public function upload()
+    {
+        if ($this->validate()) {
+            $this->avatar->saveAs('uploads' . DIRECTORY_SEPARATOR . $this->avatar->baseName . '.' . $this->avatar->extension);
+            return true;
+        } else {
+            return false;
+        }
     }
 }
