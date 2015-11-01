@@ -7,6 +7,10 @@ return [
         ],
         'urlManager' => [
             'enablePrettyUrl' => true
-        ]
+        ],
+        'thumbnail' => [
+            'class' => 'himiklab\thumbnail\EasyThumbnail',
+            'cacheAlias' => 'assets/gallery_thumbnails',
+        ],
     ],
 ];
