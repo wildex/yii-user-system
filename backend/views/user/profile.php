@@ -2,28 +2,35 @@
 
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
-/* @var $model \common\models\LoginForm */
+/* @var $fileRepo \common\models\FileRepository */
+/* @var $user \common\models\User */
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use himiklab\thumbnail\EasyThumbnailImage;
 
 $this->title = 'Profile';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="profile-manage">
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?= Html::encode($user->username) ?></h1>
 
     <p>Edit profile</p>
 
     <div class="row">
         <div class="col-lg-5">
             <?php $form = ActiveForm::begin(['id' => 'profile-form', 'options' => ['enctype' => 'multipart/form-data']]); ?>
-
-                <?= $form->field($model, 'username') ?>
-
-                <?= $form->field($model, 'avatar')->fileInput() ?>
-
-                <?= $form->field($model, 'phone') ?>
+                <?php
+                    echo EasyThumbnailImage::thumbnailImg(
+                        Yii::getAlias('@common/') . $user->avatar,
+                        150,
+                        150,
+                        EasyThumbnailImage::THUMBNAIL_OUTBOUND,
+                        ['alt' => $user->username]
+                    );
+                ?>
+                <?= $form->field($fileRepo, 'imageFile')->fileInput()->label('User avatar') ?>
+                <?= $form->field($user, 'phone') ?>
 
                 <div class="form-group">
                     <?= Html::submitButton('Update', ['class' => 'btn btn-primary', 'name' => 'update-button']) ?>
