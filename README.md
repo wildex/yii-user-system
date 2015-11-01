@@ -11,6 +11,8 @@ Functions:
 Local server setup
 ------------------------
 
+## Preparing environment
+
 To run this app you simply need:
 
 * Apache2
@@ -18,3 +20,7 @@ To run this app you simply need:
 * Mysql Database
 
 There are example apache config files, can be found in _httpd_conf_ folder.
+
+## Installing software
+
+After server environment is ready, make sure to run ```composer update``` in project root folder.
