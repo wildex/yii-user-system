@@ -5,6 +5,7 @@ use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use common\models\User;
+use common\models\FileRepository;
 use yii\web\UploadedFile;
 
 /**
@@ -37,17 +38,19 @@ class UserController extends Controller
             return $this->goHome();
         }
 
-        $model = User::find(\Yii::$app->user->id)->one();
+        $user = User::findIdentity(\Yii::$app->user->id);
+        $fileRepo = new FileRepository();
 
         if (Yii::$app->request->isPost) {
-            $model->avatar = UploadedFile::getInstances($model, 'avatar');
-            if ($model->upload()) {
-                // file is uploaded successfully
+            $user->load(Yii::$app->request->post());
+            $fileRepo->imageFile = UploadedFile::getInstance($fileRepo, 'imageFile');
+            if ($fileRepo->imageFile
+                && ($path = $fileRepo->upload())) {
+                $user->avatar = $path;
             }
+            $user->save();
         }
 
-        return $this->render('profile', [
-            'model' => $model,
-        ]);
+        return $this->render('profile', compact('user', 'fileRepo'));
     }
 }
