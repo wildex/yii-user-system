@@ -42,6 +42,6 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
     <div class="micro-remark">
-        <?= BaseHtml::a('*Delete account', Url::to(['user/delete', 'id' => $user->id]), ['confirm' => 'Are you sure?'])?>
+        <?= BaseHtml::a('*Delete account', Url::to(['user/delete', 'id' => $user->id]))?>
     </div>
 </div>

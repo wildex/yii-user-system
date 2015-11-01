@@ -8,7 +8,8 @@ use common\models\User;
 use common\models\FileRepository;
 use yii\web\ForbiddenHttpException;
 use yii\web\UploadedFile;
-use \common\traits\UserTrait;
+use common\traits\UserTrait;
+use backend\models\DeleteForm;
 
 /**
  * Site controller
@@ -77,11 +78,23 @@ class UserController extends Controller
     {
         $id = intval($id);
         if($id === Yii::$app->user->id) {
-            Yii::$app->user->logout();
-            $user = $this->getUser($id);
-            $user->status = User::STATUS_DELETED;
-            $user->save();
-            return $this->redirect('/site/index/');
+            $deleteForm = new DeleteForm();
+
+
+            if(Yii::$app->request->isPost) {
+                $user = $this->getUser($id);
+                $deleteForm->load(Yii::$app->request->post());
+
+                if($user->validatePassword($deleteForm->password)) {
+                    $deleteForm->delete($user);
+                    Yii::$app->user->logout();
+                    return $this->redirect('/site/index/');
+                }
+                else {
+                    Yii::$app->session->setFlash('error', "Invalid password!");
+                }
+            }
+            return $this->render('delete', compact('deleteForm'));
         }
         else {
             throw new ForbiddenHttpException;

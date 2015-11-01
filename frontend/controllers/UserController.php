@@ -64,7 +64,6 @@ class UserController extends Controller
     public function actionView($id)
     {
         $user = $this->getUser(intval($id));
-
         return $this->render('view', compact('user'));
     }
 
