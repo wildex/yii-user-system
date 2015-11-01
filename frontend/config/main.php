@@ -28,6 +28,11 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'urlManager' => [
+            'rules' => [
+                'user/<id:\d+>' => 'user/view'
+            ],
+        ],
     ],
     'params' => $params,
 ];
