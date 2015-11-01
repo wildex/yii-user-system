@@ -22,14 +22,14 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="row">
         <div class="col-lg-5">
             <?php $form = ActiveForm::begin(['id' => 'profile-form', 'options' => ['enctype' => 'multipart/form-data']]); ?>
-                <?php
-                    echo EasyThumbnailImage::thumbnailImg(
+                <?=
+                    $user->avatar ? EasyThumbnailImage::thumbnailImg(
                         Yii::getAlias('@common/') . $user->avatar,
                         150,
                         150,
                         EasyThumbnailImage::THUMBNAIL_OUTBOUND,
                         ['alt' => $user->username]
-                    );
+                    ) : 'No avatar :('
                 ?>
                 <?= $form->field($fileRepo, 'imageFile')->fileInput()->label('User avatar') ?>
                 <?= $form->field($user, 'phone') ?>

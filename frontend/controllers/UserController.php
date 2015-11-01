@@ -33,6 +33,11 @@ class UserController extends Controller
         ];
     }
 
+    /**
+     * List all users
+     *
+     * @return string
+     */
     public function actionIndex()
     {
         $query = User::find();
@@ -49,6 +54,13 @@ class UserController extends Controller
         ]);
     }
 
+    /**
+     * View user info
+     *
+     * @param $id
+     * @return string
+     * @throws \yii\web\NotFoundHttpException
+     */
     public function actionView($id)
     {
         $user = $this->getUser(intval($id));

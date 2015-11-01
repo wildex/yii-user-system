@@ -16,18 +16,17 @@ $this->params['breadcrumbs'][] = $this->title;
 <div>
     <h1><?= Html::encode($user->username) ?></h1>
 
-    <p><?= $user->phone ?></p>
+    <p><?= $user->phone ? $user->phone: 'Phone is not set'?></p>
 
     <div class="row">
         <div class="col-lg-5">
-                <?php
-                    echo EasyThumbnailImage::thumbnailImg(
+                <?= $user->avatar ? EasyThumbnailImage::thumbnailImg(
                         Yii::getAlias('@common/') . $user->avatar,
                         150,
                         150,
                         EasyThumbnailImage::THUMBNAIL_OUTBOUND,
                         ['alt' => $user->username]
-                    );
+                    ) : 'No avatar :('
                 ?>
         </div>
     </div>

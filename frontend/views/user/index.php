@@ -18,13 +18,13 @@ $this->params['breadcrumbs'][] = $this->title;
     ?>
             <div class="row">
                 <h2><?= BaseHtml::a($user->username, Url::to(['user/view', 'id' => $user->id]))?></h2>
-                <?= EasyThumbnailImage::thumbnailImg(
+                <?= $user->avatar ? EasyThumbnailImage::thumbnailImg(
                     Yii::getAlias('@common/') . $user->avatar,
                     100,
                     100,
                     EasyThumbnailImage::THUMBNAIL_OUTBOUND,
                     ['alt' => $user->username]
-                ) ?>
+                ) : 'No avatar :(' ?>
             </div>
     <?php
         }
