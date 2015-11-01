@@ -51,9 +51,9 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-            ['phone', 'number'],
+            [['phone'], 'udokmeci\yii2PhoneValidator\PhoneValidator','country'=>'DE'],
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
-            ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
+            ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]]
         ];
     }
 
