@@ -3,9 +3,9 @@ Yii user management system
 
 Functions:
 * Create new user
-* Update user avatar
+* Update user avatar (site-back.dev/user/profile/)
 * Update user phone number
-* List already registered users
+* List already registered users (site-front.dev/users/)
 
 
 Local server setup

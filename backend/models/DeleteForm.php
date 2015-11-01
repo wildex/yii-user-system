@@ -5,7 +5,7 @@ use yii\base\Model;
 use common\models\User;
 
 /**
- * Signup form
+ * Cancellation account
  */
 class DeleteForm extends Model
 {
@@ -22,6 +22,11 @@ class DeleteForm extends Model
         ];
     }
 
+    /**
+     * Delete user
+     *
+     * @param User $user
+     */
     public function delete(User $user)
     {
         $user->status = User::STATUS_DELETED;
