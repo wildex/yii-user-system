@@ -11,7 +11,7 @@ Functions:
 Local server setup
 ------------------------
 
-## Preparing environment
+### Preparing environment
 
 To run this app you simply need:
 
@@ -21,6 +21,6 @@ To run this app you simply need:
 
 There are example apache config files, can be found in _httpd_conf_ folder.
 
-## Installing software
+### Installing software
 
 After server environment is ready, make sure to run ```composer update``` in project root folder.
