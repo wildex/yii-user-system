@@ -1,4 +1,4 @@
-Small user manage system based on YII framework
+Yii user management system
 =====================================
 
 Functions:
