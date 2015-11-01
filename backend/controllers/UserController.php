@@ -78,7 +78,9 @@ class UserController extends Controller
         $id = intval($id);
         if($id === Yii::$app->user->id) {
             Yii::$app->user->logout();
-            $this->getUser($id)->delete();
+            $user = $this->getUser($id);
+            $user->status = User::STATUS_DELETED;
+            $user->save();
             return $this->redirect('/site/index/');
         }
         else {

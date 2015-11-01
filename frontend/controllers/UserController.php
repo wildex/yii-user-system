@@ -40,13 +40,13 @@ class UserController extends Controller
      */
     public function actionIndex()
     {
-        $query = User::find();
+        $query = User::find()->where(['status' => User::STATUS_ACTIVE]);
         $countQuery = clone $query;
+
         $pages = new Pagination(['totalCount' => $countQuery->count()]);
         $users = $query->offset($pages->offset)
             ->limit($pages->limit)
             ->all();
-
 
         return $this->render('index', [
             'users' => $users,
