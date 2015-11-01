@@ -8,6 +8,8 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use himiklab\thumbnail\EasyThumbnailImage;
+use yii\helpers\Url;
+use \yii\helpers\BaseHtml;
 
 $this->title = 'Profile';
 $this->params['breadcrumbs'][] = $this->title;
@@ -38,5 +40,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <?php ActiveForm::end(); ?>
         </div>
+    </div>
+    <div class="micro-remark">
+        <?= BaseHtml::a('*Delete account', Url::to(['user/delete', 'id' => $user->id]), ['confirm' => 'Are you sure?'])?>
     </div>
 </div>

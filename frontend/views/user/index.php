@@ -7,6 +7,7 @@
 use yii\widgets\LinkPager;
 use himiklab\thumbnail\EasyThumbnailImage;
 use yii\helpers\Url;
+use \yii\helpers\BaseHtml;
 
 $this->title = 'Users';
 $this->params['breadcrumbs'][] = $this->title;
@@ -16,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
         foreach($users as $user) {
     ?>
             <div class="row">
-                <h2><a href="<?= Url::to(['user/view', 'id' => $user->id])?>"><?= $user->username ?></a></h2>
+                <h2><?= BaseHtml::a($user->username, Url::to(['user/view', 'id' => $user->id]))?></h2>
                 <?= EasyThumbnailImage::thumbnailImg(
                     Yii::getAlias('@common/') . $user->avatar,
                     100,

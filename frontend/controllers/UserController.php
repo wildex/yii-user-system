@@ -6,13 +6,15 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use common\models\User;
 use yii\data\Pagination;
-use yii\web\NotFoundHttpException;
+use \common\traits\UserTrait;
 
 /**
  * Site controller
  */
 class UserController extends Controller
 {
+    use UserTrait;
+
     /**
      * @inheritdoc
      */
@@ -47,12 +49,11 @@ class UserController extends Controller
         ]);
     }
 
-    public function actionView()
+    public function actionView($id)
     {
-        $user = User::findIdentity(intval(Yii::$app->request->get('id')));
-        if(is_null($user)) {
-            throw new NotFoundHttpException('user doesn\'t exist');
-        }
+        $user = $this->getUser(intval($id));
+
         return $this->render('view', compact('user'));
     }
+
 }
